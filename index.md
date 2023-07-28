@@ -1,6 +1,24 @@
-# otanex.github.io
+### Mac command line notes
 
 
-Swaks (Swiss Army Knife for SMTP) is a simple, yet powerful command line tool that can be used for SMTP server testing as well as to send mail directly from command line. To install swaks do the following:
+networksetup -listallhardwareports
+networksetup -setsecurewebproxy wi-fi 192.168.86.36 3128
+networksetup -setwebproxystate "USB 10/100/1000 LAN" on
+networksetup -setwebproxystate "USB 10/100/1000 LAN" off
 
-https://www.sefnet.tech/2016/09/28/how-to-send-mail-from-command-line-using-swaks/
+
+**check USB**
+```bash 
+ioreg -p IOUSB -w0 | sed 's/[^o]*o //; s/@.*$//' | grep -v '^Root.*'
+```
+or
+```bash
+system_profiler SPUSBDataType
+```
+
+
+LaunchAgents
+```bash
+defaults read com.apple.dock.plist|grep "file:"| cut -d\" -f4 | cut -d. -f1| cut -d\/ -f5
+
+```
